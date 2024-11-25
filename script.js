@@ -1,6 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
     const editor = document.getElementById("editor");
     const fontSizeSelector = document.getElementById("fontSizeSelector");
+/*
+    const toolbar = document.getElementById("toolbar");
+    const toggleToolbarBtn = document.getElementById("toggleToolbarBtn");
+
+    // 툴바 토글 기능
+    toggleToolbarBtn.addEventListener("click", () => {
+        if (toolbar.style.display === "none") {
+            toolbar.style.display = "flex"; // 툴바 보이기
+            toggleToolbarBtn.textContent = "툴바 숨기기";
+        } else {
+            toolbar.style.display = "none"; // 툴바 숨기기
+            toggleToolbarBtn.textContent = "툴바 보이기";
+        }
+    });
+*/
 
     // 폰트 크기 적용
     fontSizeSelector.addEventListener("change", () => {
