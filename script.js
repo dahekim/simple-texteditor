@@ -19,6 +19,23 @@ document.addEventListener("DOMContentLoaded", () => {
             // 선택된 텍스트가 없다면 에디터 자체에 폰트 크기 적용
             editor.style.fontSize = selectedFontSize;  
         }
+
+    // 선택한 텍스트의 폰트 크기 감지
+    editor.addEventListener("mouseup", () => {
+        const selection = window.getSelection();
+        if (selection.rangeCount > 0) {
+            const parentElement = selection.anchorNode?.parentElement;
+            if (parentElement && parentElement !== editor) {
+                const fontSize = window.getComputedStyle(parentElement).fontSize;
+                const fontSizeValue = parseInt(fontSize);
+
+                // 셀렉트박스의 값을 선택한 글자 크기에 맞게 변경
+                fontSizeSelector.value = fontSizeValue;
+            }
+        }
+    });
+
+    
     });
 
     // 이미지 삽입
